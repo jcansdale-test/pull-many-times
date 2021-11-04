@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: docker login -u token -p ${{ github.token }}
+      - run: docker login -u token -p ${{ secrets.READ_PACKAGES_TOKEN }}
       - run: docker pull ghcr.io/dribbble/dribbble:ci-1.0
