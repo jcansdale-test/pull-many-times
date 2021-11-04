@@ -1,0 +1,11 @@
+on:
+  push:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: docker login -u token -p ${{ github.token }}
+      - run: docker pull ghcr.io/dribbble/dribbble:ci-1.0
