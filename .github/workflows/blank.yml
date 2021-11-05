@@ -5,7 +5,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
+    strategy:
+      matrix:
+        try: [1,2,3,4,5,6,7,8,9,10,11,12,13,141,5,16]
+    
     steps:
       - run: docker login ghcr.io -u token --password-stdin <<< ${{ secrets.READ_PACKAGES_TOKEN }}
       - run: docker pull ghcr.io/dribbble/dribbble:ci-1.0
