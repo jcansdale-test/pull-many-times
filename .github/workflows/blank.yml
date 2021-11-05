@@ -6,7 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
-    container: ghcr.io/dribbble/dribbble:ci-1.0
+    container:
+      image: ghcr.io/dribbble/dribbble:ci-1.0
+      credentials:
+         username: ${{ github.actor }}
+         password: ${{ secrets.READ_PACKAGES_TOKEN }}
 
     strategy:
       matrix:
