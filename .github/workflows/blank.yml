@@ -12,9 +12,9 @@ jobs:
 
     container:
       image: ${{ matrix.image }}
-      credentials:
-         username: ${{ github.actor }}
-         password: ${{ secrets.READ_PACKAGES_TOKEN }}
+      # credentials:
+      #   username: ${{ github.actor }}
+      #   password: ${{ secrets.READ_PACKAGES_TOKEN }}
 
     strategy:
       matrix:
